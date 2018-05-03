@@ -7,6 +7,9 @@ class ATest(unittest.TestCase):
     def test_function_x(self):
         print('function test')
 
+    def test_anotherfunction_x(self):
+        print('another function test')
+
     def tearDown(self):
         print("tear-down")
 
