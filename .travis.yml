@@ -1,4 +1,14 @@
 language: python
+
+services:
+  - docker
+
+before_install:
+  - docker build -t dockerfiles/2017.2.0_libadjoint .
+  - docker run --name glimslib -w /opt/project -v .:/opt/project -t glimslib_image:latest
+  - docker ps -a
+  - docker run glimslib -c "python program_test.py"
+
 python:
   - 2.7
 install:
